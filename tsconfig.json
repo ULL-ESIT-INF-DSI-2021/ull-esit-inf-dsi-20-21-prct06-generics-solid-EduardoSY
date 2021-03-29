@@ -10,6 +10,7 @@
       "outDir": "./dist",
       "rootDir": "./src",
       "noImplicitAny": true,                    /* Raise error on expressions and declarations with an implied 'any' type. */
-      "strictNullChecks": true                 /* Enable strict null checks. */
+      "strictNullChecks": true,
+      "noImplicitReturns": true                 
     }
   }
