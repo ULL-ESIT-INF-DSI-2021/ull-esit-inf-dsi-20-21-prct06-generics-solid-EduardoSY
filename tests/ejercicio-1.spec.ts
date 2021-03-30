@@ -71,7 +71,7 @@ describe('Comprobamos la clase Combate', () => {
   });
 });
 
-describe('Comprobamos la clase Combate', () => {
+describe('Comprobamos la clase Fighterdex', () => {
   let pikachu = new Pokemon('Pikachu', 'Electrico', 15, 50, 'Pika Pi',
       {hpMax: 35, attack: 55, def: 40, speed: 90});
   let vegetta = new DragonBall('Vegeta', 80, 190,
