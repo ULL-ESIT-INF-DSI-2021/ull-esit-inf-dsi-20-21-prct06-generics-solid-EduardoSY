@@ -27,6 +27,13 @@ export abstract class Fighter {
     this.hpCombate = estadisticas.hpMax;
   }
   /**
+   * Resta el daño recibido a la salud actual
+   * @param damage Daño recibido
+   */
+  restarHP(damage: number) {
+    this.hpCombate -= damage;
+  }
+  /**
    * Getter para el nomnbre
    * @returns nombre
    */
@@ -68,4 +75,8 @@ export abstract class Fighter {
   getFrase() {
     return this.frase;
   }
+  /**
+   * Getter para obtener el universo de donde viene el luchador
+   */
+  abstract getUniverso(): string;
 }
