@@ -19,7 +19,9 @@ En caso de que no sepamos cómo instalar/utilizar alguna de estas herramientas p
 
 ## 3. Desarrollo de los ejercicios
 
--**[Acceso a la documentación generada con Typedoc](./docum/index.html)**
+- **[Acceso a la documentación generada con Typedoc](./docum/index.html)**
+- **[Código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src)**
+- **[Tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/tests)**
 
 ### Ejercicio 1. - El Combate definitivo
 
