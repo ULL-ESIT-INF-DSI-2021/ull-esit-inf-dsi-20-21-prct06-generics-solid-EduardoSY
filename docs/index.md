@@ -308,6 +308,7 @@ export class Fighterdex {
   }
 };
 ```
+
 **Ejemplo de ejecución**
 ```
 let pikachu = new Pokemon('Pikachu', 'Electrico', 15, 50, 'Pika Pi',
@@ -321,9 +322,7 @@ console.log(combate2.combatir());
 Resultado:
 
 
-Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas del ejercicio 1](). EEEDIITAARR.
-
-FOTO EJECUCION
+Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-1.spec.ts)
 
 ## Ejercicio 2. - Conversor de unidades
 
@@ -391,6 +390,7 @@ console.log('El resultado es ' + m2mi.convertir(1000));
 ```
 Resultado:
 
+Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-2.spec.ts)
 
 ### Ejercicio 3. - DSIflix
 
@@ -490,6 +490,8 @@ export type pelicula = {
   }
 }
 ```
+
+Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-3.spec.ts)
 
 ### Cubrimiento del código
 
