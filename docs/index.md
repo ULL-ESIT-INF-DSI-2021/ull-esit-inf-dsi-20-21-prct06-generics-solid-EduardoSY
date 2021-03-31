@@ -19,7 +19,12 @@ En caso de que no sepamos cómo instalar/utilizar alguna de estas herramientas p
 
 ## 3. Desarrollo de los ejercicios
 
+-**[Acceso a la documentación generada con Typedoc](./docum/index.html)**
+
 ### Ejercicio 1. - El Combate definitivo
+
+- [Acceso al código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src/ejercicio-1)
+- [Acceso a los tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-1.spec.ts)
 
 Partimos del código desarrollado en la práctica anterior. En primer lugar se nos pide desarrollar una clase abstracta denominada `Fighter`. Esta será la superclase que será heredada por cada uno de los distintos tipos de combatientes.
 
@@ -310,6 +315,9 @@ FOTO EJECUCION
 
 ## Ejercicio 2. - Conversor de unidades
 
+- [Acceso al código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src/ejercicio-2)
+- [Acceso a los tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-2.spec.ts)
+
 Lo primero que se nos pide para este ejercicio es crear una interfaz genérica. Esa interfaz es `isConvertible`. Aquí indicamos 2 getters y un método `convertir`. La idea de los getters es conocer en qué sistema está el valor que hemos introducido y en qué sistema queremos transformarlo. `Convertir` será el método que haga los cálculos oportunos. 
 
 Al tratarse de una interfaz debemos implementar cada uno de estos métodos en las clases.
@@ -363,3 +371,127 @@ export class Longitud implements isConvertible<number> {
   }
 }
 ```
+
+### Ejercicio 3. - DSIflix
+
+- [Acceso al código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src/ejercicio-3)
+- [Acceso a los tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-3.spec.ts)
+
+
+Lo primero que hacemos es crear la interfaz `Stremeable`. Esta interfaz posee dos métodos: un metodo add para añadir elementos (serie, pelicula o documental) y `getElementos` que nos devolvería la lista completa de peliculas, series o documentales.
+
+```typescript
+export interface Stremeable<T> {
+  addElement(nuevoElemento: T): void;
+  getElementos(): T[];
+}
+```
+
+Para cumplir con la S de los principios SOLID creamos otra interfaz que extiende de `Stremeable`, `StremeableSearch` donde lo que hacemos es definir un método de búsqueda. Así, gracias a esta interfaz, puedo cumplir el principio de responsabilidad única.
+
+```typescript
+export interface StremeableSearch<T> extends Stremeable<T> {
+  buscar(parametro: string, valor: string): T[];
+}
+```
+
+Vemos que el método buscar recibe dos argumentos. El primero de ellos es **parametro** que indica la categoría a buscar. El segundo sería el valor a buscar dentro de esa categoría.
+
+La siguiente clase a implementar, siguiendo el guión, es la clase abstracta `BasicStreamableCollection`. Tal cual dice el guión, en este punto podremos particularizar algunos puntos de la interfaz StremeableSearch pero otros será necesarios dejarlos como métodos abstractos para definirlos más adelante en la jerarquía de clases.
+
+En este caso definimos `addElement` donde simplemente hacemos un push a una lista que hemos definido como protected (para que pueda ser vista por las clases heredadas).
+
+Como metodos abstractos tenemos `getElementos` y `buscar`.
+
+```typescript
+import {StremeableSearch} from './stremeablesearch';
+
+export abstract class BasicStreamableCollection<T> implements
+  StremeableSearch<T> {
+  constructor(protected lista: T[]) {};
+
+  addElement(nuevoElemento: T) {
+    this.lista.push(nuevoElemento);
+  }
+  abstract getElementos(): T[];
+
+  abstract buscar(parametro: string, valor: string): T[];
+}
+```
+
+Finalmente nos queda definir las clases para cada tipo de contenido audiovisual, es decir, una clase `Serie`, una clase `Pelicula` y una clase `Documental`. Estas son muy parecidas entre si asi que con explicar una de ellas será suficiente. 
+
+Explicaremos, por ejemplo, la clase `Pelicula`.
+
+Antes de definir una clase, vamos a definir un tipo de dato que nos permita representar los elementos de esa clase. En este caso, para las películas, he decidico que con un titulo, el año de publicación, el genero y la clasificación es suficiente.
+
+En cuanto a la propia clase, establecemos que para crear el objeto debemos pasarle un array de peliculas.
+
+Ahora nos toca definir los metodos que habiamos declarado como abstractos.
+
+`getElementos` nos devuelve el array completo de peliculas en este caso.
+
+`buscar` nos devuelve un array con todas las coincidencias según la categoría y valor que buscamos. Para rellenar este array lo que hacemos es, con un switch, escoger la categoría a buscar. Una vez tenemos la categoría hacemos uso de filter, una función que devuelve un array en base a una función que le pasemos. La función itera por el array y comprueba si el valor de la categoría del elemento analizado coincide con el que estamos buscando.
+```typescript
+export type pelicula = {
+  titulo: string;
+  año: number;
+  genero: string;
+  clasificacion: number;
+}
+  constructor(private peliculas: pelicula[]) {
+    super(peliculas);
+  }
+
+  getElementos() {
+    return this.peliculas;
+  }
+
+  buscar(parametro: string, valor: string): pelicula[] {
+    let resultado: pelicula[] = [];
+    switch (parametro) {
+      case ('titulo'):
+        resultado = this.getElementos().filter((x) => (x.titulo == valor));
+        break;
+      case ('año'):
+        resultado = this.getElementos().filter((x) => (x.año == +valor));
+        break;
+      case ('genero'):
+        resultado = this.getElementos().filter((x) => (x.genero == valor));
+        break;
+      case ('clasificacion'):
+        resultado = this.getElementos().filter((x) =>
+          (x.clasificacion == +valor));
+        break;
+      default:
+        console.log('Lo sentimos, no hemos encontrado nada');
+    }
+    return resultado;
+  }
+}
+```
+
+### Cubrimiento del código
+
+Como todos sabemos, cubrir absolutamente todo el código es algo muy complejo y laborioso. Es por eso que hay ciertas zonas que, si ya las hemos comprobado anteriormente o son cosas triviales, no hacemos pruebas en especifico para ello.
+
+A continuación adjunto una captura donde se muestra el resultado del cubrimiento del código hecho para esta práctica.
+
+## 4. Dificultades y conclusión
+
+A la hora de realizar la práctica ya he notado que los conceptos van avanzando un poco. Ya no me ha resultado tan sencillo como podrían ser las anteriores y he tenido que indagar algo más para entender correctamente los conceptos tratados en esta práctica. Así mismo, he consultado con algunos compañeros durante el desarrollo del código para resolver dudas sobre el planteamiento, sobretodo en el ejercicio 3.
+
+En el desarrollo de esta práctica la verdad que he aprendido bastante, sobretodo porque he tenido que releer los apuntes y consultar en internet, lo que ha hecho que afiance un poco más los conocimientos.
+
+## 5. Referencias
+- [Guión práctica 6](https://ull-esit-inf-dsi-2021.github.io/prct06-generics-solid/): Guión de la práctica .
+- [Guía para crear un proyecto](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html): Guía del profesor para crear un proyecto.
+- [Tutorial de instalación y configuracion Typedoc (Solo alumnos ULL)](https://drive.google.com/file/d/19LLLCuWg7u0TjjKz9q8ZhOXgbrKtPUme/view): Tutorial creado por el profesor sobre cómo instalar, configurar y utilizar Typedoc.
+- [Tutorial de instalación y configuración de Mocha y Chai en un proyecto TS (Solo alumnos ULL)](https://drive.google.com/file/d/1-z1oNOZP70WBDyhaaUijjHvFtqd6eAmJ/view): Tutorial creado por el profesor sobre cómo instalar, configurar y utilizar Mocha y Chai.
+- [Tutorial Instanbul (Solo alumnos ULL)](https://drive.google.com/file/d/1xLDc4CpoYpsAlCFO_4DMwu7MKCtcZDnh/view): Tutorial creado por el profesor sobre cómo instalar, configurar y utilizar Instanbul y Coveralls.
+- [Apuntes sobre objetos, clases e interfaces](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-objects-classes-interfaces.html): Apuntes creados por el profesor sobre objetos, clases e interfaces.
+- [Apuntes sobre sobre clases e interfaces genericas](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-generics.html): Apuntes creados por el profesor sobre clases e interfaces genericas.
+- [Guia de Typedoc](https://typedoc.org/guides/installation/): Guia oficial de Typedoc
+- [Guía de estilo APA](https://biblioguias.uam.es/citar/estilo_apa): Guía sobre los distintos estilos APA
+- [Formas de eliminar elementos de un array](https://love2dev.com/blog/javascript-remove-from-array/): Explicación de distintas formas de eliminar un elemento de un array.
+- [Cómo ordenar un array](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort): Explicación de cómo funciona la función sort acompañada de ejemplos.
