@@ -321,7 +321,9 @@ let vegetta = new DragonBall('Vegeta', 80, 190,
 let combate2 = new Combat(pikachu, vegetta);
 console.log(combate2.combatir());
 ```
+
 Resultado:
+
 ![Resultado ejercicio 1](img/output_ejercicio1.PNG)
 
 Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-1.spec.ts)
@@ -390,7 +392,9 @@ export class Longitud implements isConvertible<number> {
 let m2mi = new Longitud('metros', 'millas');
 console.log('El resultado es ' + m2mi.convertir(1000));
 ```
+
 Resultado:
+
 ![Resultado ejercicio 2](img/output_ejercicio2.PNG)
 
 Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-2.spec.ts)
