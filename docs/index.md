@@ -96,7 +96,7 @@ Estos Combates se instancian recibiendo dos luchadores. Con la función `calcula
 
 Los valores de daño no son aleatorios. Los calculamos gracias a la función `calculoCombate` que, gracias a las estadísticas y universo al que pertenece cada luchador podemos hacer un cálculo de cuán efectivos son sus ataques.
 
-Finalmente tenemos `combatir`, la función que no permite que nuestros luchadores se maten entre ellos. Hacemos que los luchadores se ataquen alternativamente por rondas hasta que la vida de uno de ellos llegue a 0. En ese punto devolvemos un mensaje indicanto quién ha ganado.
+Finalmente tenemos `combatir`, la función que no permite que nuestros luchadores se maten entre ellos. Hacemos que los luchadores se ataquen alternativamente por rondas hasta que la vida de uno de ellos llegue a 0. En ese punto devolvemos un mensaje indicanto quién ha ganado. Como novedad tenemos que, antes de cada ataque, cada luchador dice su frase característica.
 
 ```typescript
 export class Combat {
@@ -251,4 +251,55 @@ export class Combat {
     return parseFloat(damage.toFixed(2));
   }
 }
+```
+
+La última clase de la que vamos a hablar es de `Fighterdex`, una evolución de la clase de la práctica anterior `Pokedex`. En este caso, en lugar de simplemente almacenar Pokemon, podemos almacenar personajes de cualquier universo.
+
+La estructura se mantiene respecto a la práctica anterior. Tenemos un array de luchadores que sirve como Database así como funciones para manipularlo.
+
+- `addFighter` nos permite añadir un nuevo luchador a este sistema. Simplemente hacemos un push al array con nuestro nuevo luchador.
+- `delFighter` nos da la opción de eliminar un combatente. Lo que hacemos es buscar dentro de la base de datos al combatiente en cuestión. En caso de no encontrarlo nos devuelve un mensaje de error. Si está el luchador, con la función splice lo eliminamos.
+- `buscarLuchador` nos permite saber si tenemos un luchador o no en nuestra base de datos. Iteramos el array en busca del peleador. Si este se encuentra devolvemos la posición. Si no lo tenemos, devolvemos null. 
+- `fighterdexSize` nos permite saber la cantidad de peleadores tenemos guardados.
+
+```typescript
+export class Fighterdex {
+  constructor(private dataBase: Fighter[]) {};
+
+  public addFighter(luchador: Fighter) {
+    this.dataBase.push(luchador);
+  }
+
+  public delFighter(luchador: Fighter) {
+    let pos: number = -1;
+    this.dataBase.forEach((iter) => {
+      if (iter === luchador) {
+        pos = this.dataBase.indexOf(iter);
+      }
+    });
+    if (pos == -1) {
+      console.log('Imposible eliminar. Luchador no encontrado');
+    } else {
+      this.dataBase.splice(pos, 1);
+    }
+  };
+
+  public fighterdexSize(): number {
+    return this.dataBase.length;
+  }
+
+  public buscarLuchador(luchador: Fighter) {
+    let pos: number = -1;
+    this.dataBase.forEach((iter) => {
+      if (iter === luchador) {
+        pos = this.dataBase.indexOf(iter);
+      }
+    });
+    if (pos == -1) {
+      return null;
+    } else {
+      return this.dataBase[pos];
+    }
+  }
+};
 ```
