@@ -2,15 +2,15 @@
 * Elaborado por Eduardo Da Silva Yanes
 
 ## Indice
-- 1. [Introduccion](#introduccion)
-- 2. [Pasos previos](#previos)
-- 3. [Desarrollo de los ejercicios](#desarrollo)
-  - 3.1 [Ejercicio 1](#ejer1)
-  - 3.2 [Ejercicio 2](#ejer2)
-  - 3.3 [Ejercicio 3](#ejer3)
-  - 3.4 [Cubrimiento del codigo](#cubrimiento)
-- 4. [Dificultades y conclusion](#conclusion)
-- 5. [Referencias](#referencias)
+- [1. Introduccion](#introduccion)
+- [2. Pasos previos](#previos)
+- [3. Desarrollo de los ejercicios](#desarrollo)
+  - [3.1 Ejercicio 1](#ejer1)
+  - [3.2 Ejercicio 2](#ejer2)
+  - [3.3 Ejercicio 3](#ejer3)
+  - [3.4 Cubrimiento del codigo](#cubrimiento)
+- [4. Dificultades y conclusion](#conclusion)
+- [5. Referencias](#referencias)
 
 ## 1. Introducción <a name="introduccion"></a>
 En esta sexta práctica vamos a profundizar en el uso de clases abtractas y genéricas así como interfaces. Durante todo el desarrollo de este ejercicio vamos a procurar aplicar los principios S y O de SOLID. En caso de que querramos saber más sobre estos principios podemos visitar esta página sobre [los principios SOLID de Typescript](https://samueleresca.net/solid-principles-using-typescript/). 
