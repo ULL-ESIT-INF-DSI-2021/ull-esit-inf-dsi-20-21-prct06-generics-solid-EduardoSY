@@ -303,3 +303,63 @@ export class Fighterdex {
   }
 };
 ```
+
+Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas del ejercicio 1](). EEEDIITAARR.
+
+FOTO EJECUCION
+
+## Ejercicio 2. - Conversor de unidades
+
+Lo primero que se nos pide para este ejercicio es crear una interfaz genérica. Esa interfaz es `isConvertible`. Aquí indicamos 2 getters y un método `convertir`. La idea de los getters es conocer en qué sistema está el valor que hemos introducido y en qué sistema queremos transformarlo. `Convertir` será el método que haga los cálculos oportunos. 
+
+Al tratarse de una interfaz debemos implementar cada uno de estos métodos en las clases.
+
+```typescript
+export interface isConvertible<T> {
+  getUnidadInicio():string;
+  getUnidadFinal():string;
+  convertir(cantidad: T): T;
+}
+```
+
+Ahora debemos crear clases para cada tipo de conversión: fuerza, longitud, masa, temperatura, tiempo, velocidad y volumen.
+
+Todas estas clases son practicamente idénticas asi que la explicación la haré con `Longitud`, por ejemplo.
+
+Cuando creamos un objeto tipo Longitud (o cualquier otro) debemos indicar mediante un string la unidad en la que se encuentra el valor y a qué unidad queremos transformarlo.
+
+Dentro de las clases vemos que tenemos un array de pares privado denominado **unidades**. En este array tenemos las equivalencias entre unidades, siendo una de ellas la unidad base. En este ejemplo tenemos como unidad base al metro.
+
+En cuanto a los métodos tenemos:
+- `getUnidadFinal` y `getUnidadInicial` son getters que nos permiten saber los sistemas de unidades con los que vamos a trabajar
+- `convertir` nos permite, dado un valor numérico, cambiarlo de sistema de unidades. Lo primero es obtener de dentro de nuestras opciones almacenadas en el array **unidades**, con qué unidades vamos a trabajar. En caso de que no encontremos la unidad dentro de nuestra "base de datos" lanzamos un mensaje de error". Si todo ha salido bien multiplicamos hacemos la operación `let resultado = cantidad * (unidad2[0][1]/unidad1[0][1]);`. Formateamos de tal manera que solo tenga 4 decimales como máximo y devolvemos el resultado como un número.
+
+  La única clase diferente es `Temperatura` ya que la forma de convertir es distinta. En lugar de hacer la operación previamente mencionada, lo único que tenemos que hacer es sumar o restar (para pasar de Celcius a Kelvin o viceversa.)
+
+```typescript
+export class Longitud implements isConvertible<number> {
+  private unidades: [string, number][] = [['metros', 1],
+    ['millas', 0.000621371192], ['pies', 3.28084]];
+
+  constructor(private readonly unidadInicio: string,
+      private readonly unidadFinal: string) {}
+
+  getUnidadFinal() {
+    return this.unidadFinal;
+  }
+  getUnidadInicio() {
+    return this.unidadInicio;
+  }
+  convertir(cantidad: number): number {
+    let unidad1 = this.unidades.filter(
+        (x) => x[0] === this.unidadInicio);
+    let unidad2 = this.unidades.filter(
+        (x) => x[0] === this.unidadFinal);
+    if ((unidad1.length != 1) || (unidad2.length != 1)) {
+      throw new Error('Error detectado con las unidades');
+    }
+    let resultado = cantidad * (unidad2[0][1]/unidad1[0][1]);
+    return +(resultado.toFixed(4));
+  }
+}
+```
