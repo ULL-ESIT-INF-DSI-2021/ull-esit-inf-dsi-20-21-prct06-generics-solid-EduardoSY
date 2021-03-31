@@ -308,6 +308,18 @@ export class Fighterdex {
   }
 };
 ```
+**Ejemplo de ejecución**
+```
+let pikachu = new Pokemon('Pikachu', 'Electrico', 15, 50, 'Pika Pi',
+    {hpMax: 35, attack: 55, def: 40, speed: 90});
+let vegetta = new DragonBall('Vegeta', 80, 190,
+    'Heey muy buenas a todos guapisimos',
+    {hpMax: 500, attack: 600, def: 500, speed: 250});
+let combate2 = new Combat(pikachu, vegetta);
+console.log(combate2.combatir());
+```
+Resultado:
+
 
 Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas del ejercicio 1](). EEEDIITAARR.
 
@@ -371,6 +383,14 @@ export class Longitud implements isConvertible<number> {
   }
 }
 ```
+
+**Ejemplo de ejecución**
+```
+let m2mi = new Longitud('metros', 'millas');
+console.log('El resultado es ' + m2mi.convertir(1000));
+```
+Resultado:
+
 
 ### Ejercicio 3. - DSIflix
 

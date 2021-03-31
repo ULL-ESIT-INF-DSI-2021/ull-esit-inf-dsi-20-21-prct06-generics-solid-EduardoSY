@@ -57,9 +57,7 @@ export class Combat {
    */
   calcularAtaques() {
     this.datoAtaque[0] = this.calculoCombate(this.luchador1, this.luchador2);
-    console.log('A 2 B > ' + this.datoAtaque[0]);
     this.datoAtaque[1] = this.calculoCombate(this.luchador2, this.luchador1);
-    console.log('B 2 A > ' + this.datoAtaque[1]);
   }
   /**
    * Calcula el daño del ataque del pokemon 1 al pokemon 2 en funcion
