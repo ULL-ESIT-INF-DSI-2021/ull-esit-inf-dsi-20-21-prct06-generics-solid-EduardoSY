@@ -1,6 +1,5 @@
 import 'mocha';
 import {expect} from 'chai';
-import {isConvertible} from '../src/ejercicio-2/isconvertible';
 import {Fuerza} from '../src/ejercicio-2/fuerza';
 import {Volumen} from '../src/ejercicio-2/volumen';
 import {Masa} from '../src/ejercicio-2/masa';
