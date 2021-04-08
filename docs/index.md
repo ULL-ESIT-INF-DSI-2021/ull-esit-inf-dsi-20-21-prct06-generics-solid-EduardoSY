@@ -1,14 +1,25 @@
 # Práctica 6 - Clases e interfaces genéricas. Principios SOLID
 * Elaborado por Eduardo Da Silva Yanes
 
-## 1. Introducción
+## Indice
+- [1. Introduccion](#introduccion)
+- [2. Pasos previos](#previos)
+- [3. Desarrollo de los ejercicios](#desarrollo)
+  - [3.1 Ejercicio 1](#ejer1)
+  - [3.2 Ejercicio 2](#ejer2)
+  - [3.3 Ejercicio 3](#ejer3)
+  - [3.4 Cubrimiento del codigo](#cubrimiento)
+- [4. Dificultades y conclusion](#conclusion)
+- [5. Referencias](#referencias)
+
+## 1. Introducción <a name="introduccion"></a>
 En esta sexta práctica vamos a profundizar en el uso de clases abtractas y genéricas así como interfaces. Durante todo el desarrollo de este ejercicio vamos a procurar aplicar los principios S y O de SOLID. En caso de que querramos saber más sobre estos principios podemos visitar esta página sobre [los principios SOLID de Typescript](https://samueleresca.net/solid-principles-using-typescript/). 
 
 Además de lo previamente mencionado vamos a trabajar con Instanbul (y de manera opcional con Coveralls). Gracias a Instanbul podremos tener una métrica de cuánto código hemos cubierto con nuestras pruebas mediant el desarrollo TDD. Para conocer más sobre Instanbul podemos revisar [la página oficial de Instanbul](https://istanbul.js.org/).
 
 Coveralls es opcional debido a que, para una cuenta estandar, no es posible trackear un repositorio privado. Es por esto que, para poder utilizar la herramienta debemos hacer público nuestro repositorio. Si quieremos probar esta herramienta (cosa recomendable) lo haremos una vez haya pasado la fecha de entrega.
 
-## 2. Pasos previos
+## 2. Pasos previos <a name="previos"></a>
 Antes de comenzar con el desarrollo de código fuente vamos a generar nuestra estructura de trabajo. Tanto en la práctica pasada como en esta y todas las posteriores seguirán la misma estructura. Tendremos un directorio **/src**. En este directorio crearemos otros **subdirectorios**, uno por cada ejercicio, donde almacenamos el código de cada uno de ellos. Estos subdirectorios siguen la nomenclatura de **ejercicio-X**.
 
 Además, debemos tener instalado (al igual la práctica anterior) Typedoc, Mocha y Chai. A estas herramientas vamos a añaadir una nueva: Instanbul.
@@ -17,13 +28,13 @@ En caso de que no sepamos cómo instalar/utilizar alguna de estas herramientas p
 - [Tutorial Mocha y Chai (Solo alumnos ULL)](https://drive.google.com/file/d/1-z1oNOZP70WBDyhaaUijjHvFtqd6eAmJ/view)
 - [Tutorial Instanbul (Solo alumnos ULL)](https://drive.google.com/file/d/1xLDc4CpoYpsAlCFO_4DMwu7MKCtcZDnh/view)
 
-## 3. Desarrollo de los ejercicios
+## 3. Desarrollo de los ejercicios <a name="desarrollo"></a>
 
 - **[Acceso a la documentación generada con Typedoc](./docum/index.html)**
 - **[Código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src)**
 - **[Tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/tests)**
 
-### Ejercicio 1. - El Combate definitivo
+### Ejercicio 1. - El Combate definitivo <a name="ejer1"></a>
 
 - [Acceso al código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src/ejercicio-1)
 - [Acceso a los tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-1.spec.ts)
@@ -321,12 +332,14 @@ let vegetta = new DragonBall('Vegeta', 80, 190,
 let combate2 = new Combat(pikachu, vegetta);
 console.log(combate2.combatir());
 ```
+
 Resultado:
 
+![Resultado ejercicio 1](img/output_ejercicio1.PNG)
 
 Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-1.spec.ts)
 
-## Ejercicio 2. - Conversor de unidades
+## Ejercicio 2. - Conversor de unidades <a name="ejer2"></a>
 
 - [Acceso al código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src/ejercicio-2)
 - [Acceso a los tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-2.spec.ts)
@@ -390,11 +403,14 @@ export class Longitud implements isConvertible<number> {
 let m2mi = new Longitud('metros', 'millas');
 console.log('El resultado es ' + m2mi.convertir(1000));
 ```
+
 Resultado:
+
+![Resultado ejercicio 2](img/output_ejercicio2.PNG)
 
 Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-2.spec.ts)
 
-### Ejercicio 3. - DSIflix
+### Ejercicio 3. - DSIflix <a name="ejer3"></a>
 
 - [Acceso al código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/tree/master/src/ejercicio-3)
 - [Acceso a los tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-3.spec.ts)
@@ -495,19 +511,21 @@ export type pelicula = {
 
 Para saber qué pruebas se han realizado puedes acceder al [fichero de pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-3.spec.ts)
 
-### Cubrimiento del código
+### Cubrimiento del código <a name="cubrimiento"></a>
 
 Como todos sabemos, cubrir absolutamente todo el código es algo muy complejo y laborioso. Es por eso que hay ciertas zonas que, si ya las hemos comprobado anteriormente o son cosas triviales, no hacemos pruebas en especifico para ello.
 
 A continuación adjunto una captura donde se muestra el resultado del cubrimiento del código hecho para esta práctica.
 
-## 4. Dificultades y conclusión
+![Imagen resultado Coverage](img/coverage.PNG)
+
+## 4. Dificultades y conclusión <a name="conclusion"></a>
 
 A la hora de realizar la práctica ya he notado que los conceptos van avanzando un poco. Ya no me ha resultado tan sencillo como podrían ser las anteriores y he tenido que indagar algo más para entender correctamente los conceptos tratados en esta práctica. Así mismo, he consultado con algunos compañeros durante el desarrollo del código para resolver dudas sobre el planteamiento, sobretodo en el ejercicio 3.
 
 En el desarrollo de esta práctica la verdad que he aprendido bastante, sobretodo porque he tenido que releer los apuntes y consultar en internet, lo que ha hecho que afiance un poco más los conocimientos.
 
-## 5. Referencias
+## 5. Referencias <a name="referencias"></a>
 - [Guión práctica 6](https://ull-esit-inf-dsi-2021.github.io/prct06-generics-solid/): Guión de la práctica .
 - [Guía para crear un proyecto](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html): Guía del profesor para crear un proyecto.
 - [Tutorial de instalación y configuracion Typedoc (Solo alumnos ULL)](https://drive.google.com/file/d/19LLLCuWg7u0TjjKz9q8ZhOXgbrKtPUme/view): Tutorial creado por el profesor sobre cómo instalar, configurar y utilizar Typedoc.
