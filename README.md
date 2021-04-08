@@ -1,4 +1,10 @@
 # [DSI] Práctica 6 - Clases e interfaces genéricas. Principios SOLID
+# Contiene EJERCICIO PE-103
+
+|**Ejercicio PE103**|
+|[Enlace fichero de codigo fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/src/ejercicio-pe103.ts)|
+|[Enlace fichero de pruebas TDD](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/blob/master/tests/ejercicio-pe103.spec.ts)|
+|[Enlace documentacion generada Ejercicio PE103](https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/docum/modules/ejercicio_pe103.html)|
 
 **[Acceso a la Github Page](https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct06-generics-solid-EduardoSY/)**
 
