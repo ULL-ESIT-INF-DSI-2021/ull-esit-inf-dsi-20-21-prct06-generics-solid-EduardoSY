@@ -20,7 +20,8 @@
     "./src/ejercicio-3/pelicula.ts",
     "./src/ejercicio-3/serie.ts",
     "./src/ejercicio-3/stremeable.ts",
-    "./src/ejercicio-3/stremeablesearch.ts"
+    "./src/ejercicio-3/stremeablesearch.ts",
+    "./src/ejercicio-pe103.ts"
   ],
   "out": "./docs/docum"
 }

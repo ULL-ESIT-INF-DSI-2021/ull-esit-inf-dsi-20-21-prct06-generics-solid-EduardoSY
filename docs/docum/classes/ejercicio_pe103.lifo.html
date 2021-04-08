@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Fighterdex | prct6</title>
+	<title>Lifo | prct6</title>
 	<meta name="description" content="Documentation for prct6">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">prct6</a>
 				</li>
 				<li>
-					<a href="../modules/ejercicio_1_fighterdex.html">ejercicio-1/fighterdex</a>
+					<a href="../modules/ejercicio_pe103.html">ejercicio-pe103</a>
 				</li>
 				<li>
-					<a href="ejercicio_1_fighterdex.fighterdex.html">Fighterdex</a>
+					<a href="ejercicio_pe103.lifo.html">Lifo</a>
 				</li>
 			</ul>
-			<h1>Class Fighterdex</h1>
+			<h1>Class Lifo&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -71,16 +71,30 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Clase que aloja una database con luchadores</p>
+						<p>Clase para implementar la pila Lifo</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Fighterdex</span>
+						<span class="target">Lifo</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">LifoInterface</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -90,16 +104,18 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="ejercicio_1_fighterdex.fighterdex.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter"><a href="ejercicio_pe103.lifo.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_1_fighterdex.fighterdex.html#addfighter" class="tsd-kind-icon">add<wbr>Fighter</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_1_fighterdex.fighterdex.html#buscarluchador" class="tsd-kind-icon">buscar<wbr>Luchador</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_1_fighterdex.fighterdex.html#delfighter" class="tsd-kind-icon">del<wbr>Fighter</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_1_fighterdex.fighterdex.html#fighterdexsize" class="tsd-kind-icon">fighterdex<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_pe103.lifo.html#getarraylifo" class="tsd-kind-icon">get<wbr>Array<wbr>Lifo</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_pe103.lifo.html#pop" class="tsd-kind-icon">pop</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_pe103.lifo.html#print" class="tsd-kind-icon">print</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_pe103.lifo.html#pseek" class="tsd-kind-icon">pseek</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_pe103.lifo.html#push" class="tsd-kind-icon">push</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_pe103.lifo.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,17 +123,17 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Fighterdex<span class="tsd-signature-symbol">(</span>dataBase<span class="tsd-signature-symbol">: </span><a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ejercicio_1_fighterdex.fighterdex.html" class="tsd-signature-type" data-tsd-kind="Class">Fighterdex</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Lifo&lt;T&gt;<span class="tsd-signature-symbol">(</span>arrayLifo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ejercicio_pe103.lifo.html" class="tsd-signature-type" data-tsd-kind="Class">Lifo</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in ejercicio-1/fighterdex.ts:5</li>
+									<li>Defined in ejercicio-pe103.ts:26</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -125,16 +141,22 @@
 									<p>Constructor de la clase</p>
 								</div>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>dataBase: <a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>arrayLifo: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Array con los luchadores</p>
+										<p>Array que hara la funcion de pila</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="ejercicio_1_fighterdex.fighterdex.html" class="tsd-signature-type" data-tsd-kind="Class">Fighterdex</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="ejercicio_pe103.lifo.html" class="tsd-signature-type" data-tsd-kind="Class">Lifo</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -142,29 +164,125 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addfighter" class="tsd-anchor"></a>
-					<h3>add<wbr>Fighter</h3>
+					<a name="getarraylifo" class="tsd-anchor"></a>
+					<h3>get<wbr>Array<wbr>Lifo</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Fighter<span class="tsd-signature-symbol">(</span>luchador<span class="tsd-signature-symbol">: </span><a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Array<wbr>Lifo<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in ejercicio-1/fighterdex.ts:15</li>
+									<li>Defined in ejercicio-pe103.ts:37</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Permite añadir luchadores</p>
+									<p>Getter para obtener la pila (array)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>arrayLifo</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="pop" class="tsd-anchor"></a>
+					<h3>pop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">pop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of LifoInterface.pop</p>
+								<ul>
+									<li>Defined in ejercicio-pe103.ts:53</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Elimina el último elemento en ser incluido en la pila
+									(Last in, first out)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="print" class="tsd-anchor"></a>
+					<h3>print</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">print<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of LifoInterface.print</p>
+								<ul>
+									<li>Defined in ejercicio-pe103.ts:76</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Muestra el contenido de la pila. En este caso
+									lo muestro desde el top hasta el fondo de la pila</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="pseek" class="tsd-anchor"></a>
+					<h3>pseek</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">pseek<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of LifoInterface.pseek</p>
+								<ul>
+									<li>Defined in ejercicio-pe103.ts:61</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Devuelve el último elemento en ser incluido en la pila pero sin eliminarlo</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+							<p>Ultimo elemento en incluirse a la pila</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="push" class="tsd-anchor"></a>
+					<h3>push</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">push<span class="tsd-signature-symbol">(</span>elemento<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of LifoInterface.push</p>
+								<ul>
+									<li>Defined in ejercicio-pe103.ts:45</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Hace un push del elemento a la pila</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>luchador: <a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a></h5>
+									<h5>elemento: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Luchador a añadir</p>
+										<p>Elemento a incluir en el top de la pila</p>
 									</div>
 								</li>
 							</ul>
@@ -173,88 +291,26 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="buscarluchador" class="tsd-anchor"></a>
-					<h3>buscar<wbr>Luchador</h3>
+					<a name="size" class="tsd-anchor"></a>
+					<h3>size</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">buscar<wbr>Luchador<span class="tsd-signature-symbol">(</span>luchador<span class="tsd-signature-symbol">: </span><a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a></li>
+						<li class="tsd-signature tsd-kind-icon">size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of LifoInterface.size</p>
 								<ul>
-									<li>Defined in ejercicio-1/fighterdex.ts:47</li>
+									<li>Defined in ejercicio-pe103.ts:69</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Permite buscar un luchador</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>luchador: <a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Luchador a buscar</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a></h4>
-							<p>Posicion en la database. Null is no es encontrado</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="delfighter" class="tsd-anchor"></a>
-					<h3>del<wbr>Fighter</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">del<wbr>Fighter<span class="tsd-signature-symbol">(</span>luchador<span class="tsd-signature-symbol">: </span><a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in ejercicio-1/fighterdex.ts:22</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Permite eliminar luchador</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>luchador: <a href="ejercicio_1_fighter.fighter.html" class="tsd-signature-type" data-tsd-kind="Class">Fighter</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Luchador a eliminar</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="fighterdexsize" class="tsd-anchor"></a>
-					<h3>fighterdex<wbr>Size</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fighterdex<wbr>Size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in ejercicio-1/fighterdex.ts:39</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Tamaño de la base de datos</p>
+									<p>Obtiene el tamaño actual de la pila</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>size database</p>
+							<p>Tamaño de la pila</p>
 						</li>
 					</ul>
 				</section>
@@ -275,7 +331,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/ejercicio_1_fighter.html">ejercicio-<wbr>1/fighter</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/ejercicio_1_fighterdex.html">ejercicio-<wbr>1/fighterdex</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -329,7 +385,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/ejercicio_3_stremeablesearch.html">ejercicio-<wbr>3/stremeablesearch</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/ejercicio_pe103.html">ejercicio-<wbr>pe103</a>
 					</li>
 				</ul>
@@ -338,23 +394,29 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="ejercicio_1_fighterdex.fighterdex.html" class="tsd-kind-icon">Fighterdex</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="ejercicio_pe103.lifo.html" class="tsd-kind-icon">Lifo</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="ejercicio_1_fighterdex.fighterdex.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="ejercicio_pe103.lifo.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ejercicio_1_fighterdex.fighterdex.html#addfighter" class="tsd-kind-icon">add<wbr>Fighter</a>
+								<a href="ejercicio_pe103.lifo.html#getarraylifo" class="tsd-kind-icon">get<wbr>Array<wbr>Lifo</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ejercicio_1_fighterdex.fighterdex.html#buscarluchador" class="tsd-kind-icon">buscar<wbr>Luchador</a>
+								<a href="ejercicio_pe103.lifo.html#pop" class="tsd-kind-icon">pop</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ejercicio_1_fighterdex.fighterdex.html#delfighter" class="tsd-kind-icon">del<wbr>Fighter</a>
+								<a href="ejercicio_pe103.lifo.html#print" class="tsd-kind-icon">print</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ejercicio_1_fighterdex.fighterdex.html#fighterdexsize" class="tsd-kind-icon">fighterdex<wbr>Size</a>
+								<a href="ejercicio_pe103.lifo.html#pseek" class="tsd-kind-icon">pseek</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="ejercicio_pe103.lifo.html#push" class="tsd-kind-icon">push</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="ejercicio_pe103.lifo.html#size" class="tsd-kind-icon">size</a>
 							</li>
 						</ul>
 					</li>
@@ -372,7 +434,6 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
